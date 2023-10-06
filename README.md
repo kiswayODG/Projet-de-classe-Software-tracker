@@ -1,66 +1,64 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Cahier de charge – projet laravel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+1.	Contexte et définition du problème
+La plateforme de gestion de logiciel libre est destinée à faciliter la gestion des logiciels libres en permettant aux utilisateurs de créer, modifier, supprimer et associer des logiciels à leurs catégories respectives. L'authentification des utilisateurs sera également mise en place pour assurer la sécurité et le contrôle d'accès.
 
-## About Laravel
+2.	Objectif
+L'objectif principal de ce projet est de développer une plateforme conviviale et efficace pour la gestion de logiciels libres, permettant aux utilisateurs d'effectuer les opérations suivantes :
+a.	Authentification des utilisateurs
+Création d'un compte utilisateur avec un nom d'utilisateur unique et un mot de passe sécurisé.
+Affichage et modification du profil utilisateur.
+Suppression du compte utilisateur si nécessaire.
+Gestion des droits d'accès pour les différents rôles (administrateur, éditeur, utilisateur).
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+b.	Gestion des logiciels :
+Liste des logiciels libres disponibles avec leurs informations pertinentes (nom, description, version, etc.).
+Création d'un nouveau logiciel avec les détails appropriés.
+Modification des informations d'un logiciel existant.
+Suppression d'un logiciel de la liste.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+c.	Mise en place d’un tableau de bord :
+Nous mettrons en place un tableau de bord où l’uitilisateur pourrait avoir une vue globale statistique des différents logiciels.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+d.	Association des logiciels à leur catégorie :
+Création de catégories pour regrouper les logiciels (par exemple : Environnement d'exécution et de développement, Système de messagerie, etc.).
+Attribution d'un logiciel existant à une catégorie pertinente.
+Affichage des logiciels appartenant à chaque catégorie.
 
-## Learning Laravel
+En plus de la catégorie des logiciel, le type (logiciel libre-gratuit et logiciel-payant).
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+e.	Gestion des utilisateurs :
+Les utilisateurs avec le rôle admin pourront gérer les utilisateurs avec principalement les fonctions de blocage et de déblocage des utilisateurs en cas de besoin.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+3.	Technologies utilisées 
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Le projet sera développé en utilisant le framework Laravel. La base de données utilisée sera MySQL pour la gestion des données.
+Nous utiliserons le framework de style Boostrap, le framework Js Jquery, Datatable pour le formatage des différentes tables et Chart.js pour la prise en compte de certaines statisques que seront prises en compte dans le tableau de bors.
 
-## Laravel Sponsors
+4.	Implémentation du projet
+f.	Interface utilisateur :
+L'interface utilisateur sera conçue de manière ergonomique et intuitive, facilitant la navigation et l'utilisation du système. Les pages clés incluront :
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Page d'accueil avec une vue d'ensemble des logiciels disponibles et des catégories.
+Page de connexion et d'inscription pour les nouveaux utilisateurs.
+Page de profil utilisateur pour gérer les informations personnelles.
+Page de gestion des logiciels avec des fonctionnalités d'ajout, de modification et de suppression.
+Page de gestion des catégories pour créer de nouvelles catégories et associer des logiciels existants.
 
-### Premium Partners
+g.	Sécurité :
+La sécurité sera une priorité et sera mise en œuvre par :
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+Cryptage des mots de passe des utilisateurs.
+Validation des données d'entrée pour éviter les failles XSS et les injections SQL.
+Gestion des droits d'accès en fonction des rôles des utilisateurs.
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+h.	Tests :
+Le système sera rigoureusement testé pour s'assurer de son bon fonctionnement et de sa stabilité. Des tests unitaires et des tests d'intégration seront effectués pour garantir la qualité du code.
 
-## Code of Conduct
+5.	Délai
+Pour la réalisation de ce projet un temps de 2 semaines nous a été accordé
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+ 
